@@ -157,6 +157,11 @@ func (s *setOpParams) finalizeParam(param *spec.Parameter, data map[string]strin
 		param.Schema = nil
 	}
 
+	// don't use type with in:body params
+	if param.In == "body" {
+		param.Type = ""
+	}
+
 	processSchema(data, param)
 	s.parameters = append(s.parameters, param)
 }

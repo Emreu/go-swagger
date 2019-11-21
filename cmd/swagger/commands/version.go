@@ -16,7 +16,7 @@ type PrintVersion struct {
 // Execute this command
 func (p *PrintVersion) Execute(args []string) error {
 	if Version == "" {
-		fmt.Println("dev")
+		fmt.Println("Custom dev")
 		return nil
 	}
 	fmt.Println("version:", Version)
